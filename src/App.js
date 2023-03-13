@@ -2,6 +2,7 @@ import React, { useCallback, useState, useEffect } from 'react';
 import { StatusBar, Dimensions, Alert } from 'react-native';
 import styled, { ThemeProvider } from 'styled-components/native';
 import { theme } from './theme';
+import images from './images';
 import Input from './components/Input';
 import Task from './components/Task';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -30,7 +31,7 @@ const List = styled.ScrollView`
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
-const App = () => {
+export default function App() {
   const width = Dimensions.get('window').width;
 
   const [isReady, setIsReady] = useState(false);
@@ -170,6 +171,6 @@ const App = () => {
       </Container>
     </ThemeProvider>
   );
-};
+}
 
-export default App;
+// export default App;
